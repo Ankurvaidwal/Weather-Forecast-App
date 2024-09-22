@@ -11,7 +11,7 @@ const Hero = () => {
 
     const { todaysData, error } = useWeather({ cityName: weatherData?.city, unit: weatherData?.unit });
 
-    console.log(error);
+    // console.log(error, todaysData);
     const currUnit = weatherData?.unit == 'imperial' ? '°F' : '°C';
 
     return (

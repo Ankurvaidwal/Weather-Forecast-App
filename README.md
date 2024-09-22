@@ -26,6 +26,8 @@ Navigate to the folder
 - **Responsive Design**: The user interface is responsive and clean, ensuring it looks good on both desktop and mobile devices.
 - **Custom Hooks**: A custom React hook (useWeather) is used to fetch weather data efficiently and manage loading and error states.
 - **API Integration**: The app integrates with OpenWeatherMap’s API to fetch weather information based on the city name, handling both current weather and 5-day forecasts.
+- **Offline Viewing**: In the event of network issues, data is stored locally in **localstorage**, allowing users to view their most recent search offline until the network problem is resolved.
+
 
 
 ## API Used
