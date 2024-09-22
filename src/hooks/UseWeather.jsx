@@ -9,7 +9,7 @@ const useWeather = ({ cityName = 'New York', unit = 'metric' }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const API_KEY = '84d322eb789d0396d08cbe714e3ff7e9';
+    const API_KEY = import.meta.env.VITE_API_KEY;
 
     useEffect(() => {
         const fetchWeather = async () => {

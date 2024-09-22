@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const useCitySearch = (query) => {
     const [filteredCities, setFilteredCities] = useState([]);
-    const username = 'ksuhiyp';
+    const username = import.meta.env.VITE_USERNAME;
+    console.log(username)
 
     useEffect(() => {
         const fetchCities = async () => {
