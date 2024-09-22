@@ -34,7 +34,7 @@ Built with React, Axios for API requests, and Tailwind CSS for styling, this app
 
  - [5 day weather forecast](https://openweathermap.org/forecast5)
  - [Searched City weather](https://openweathermap.org/current)
- - [Dynamic List of cities](https://www.geonames.org/export/geonames-search.html)
+ - [Dynamic List of cities](https://docs.mapbox.com/api/search/geocoding/)
 
 ## Environment Variables
 
@@ -42,4 +42,4 @@ To run this project, you will need to add the following environment variables to
 
 `VITE_API_KEY` from openweathermap
 
-`VITE_USERNAME` from geonames
+`VITE_TOKEN` from mapbox
