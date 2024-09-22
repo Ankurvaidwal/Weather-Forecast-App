@@ -3,15 +3,24 @@ import axios from 'axios';
 
 const useCitySearch = (query) => {
     const [filteredCities, setFilteredCities] = useState([]);
-    const username = import.meta.env.VITE_USERNAME;
-    console.log(username)
+    const mapboxToken = import.meta.env.VITE_TOKEN;
 
     useEffect(() => {
         const fetchCities = async () => {
             if (query) {
                 try {
-                    const response = await axios.get(`http://api.geonames.org/searchJSON?username=${username}&q=${query}&maxRows=10&style=SHORT`);
-                    setFilteredCities(response.data.geonames);
+                    const response = await axios.get(
+                        `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json`,
+                        {
+                            params: {
+                                access_token: mapboxToken,
+                                autocomplete: true,
+                                types: 'place',
+                                limit: 20,
+                            },
+                        }
+                    );
+                    setFilteredCities(response.data.features);
                 } catch (error) {
                     console.error('Error fetching city data:', error);
                 }
@@ -20,11 +29,13 @@ const useCitySearch = (query) => {
             }
         };
 
+
+        console.log(filteredCities)
         const debounceFetch = setTimeout(fetchCities, 300);
 
 
         return () => clearTimeout(debounceFetch);
-    }, [query, username]);
+    }, [query, mapboxToken]);
 
     return { filteredCities };
 };

@@ -20,8 +20,8 @@ const WeatherForm = () => {
 
     const handleSelect = (city) => {
         console.log(city)
-        setText(city.name);
-        setCity(city.name);
+        setText(city.text);
+        setCity(city.text);
         setQuery(null)
         setcities([])
     };
@@ -49,11 +49,11 @@ const WeatherForm = () => {
                     <ul className="absolute z-20 bg-white border border-gray-300 max-h-48 overflow-y-auto w-full rounded mt-1">
                         {filteredCities.map((city) => (
                             <li
-                                key={city.geonameId}
+                                key={city?.id}
                                 onClick={() => handleSelect(city)}
                                 className="cursor-pointer p-2 hover:bg-gray-200"
                             >
-                                {city.name} {/* Display city name */}
+                                {city.text} {/* Display city name */}
                             </li>
                         ))}
                     </ul>
