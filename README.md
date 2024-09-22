@@ -28,7 +28,7 @@ Navigate to the folder
 - **API Integration**: The app integrates with OpenWeatherMap’s API to fetch weather information based on the city name, handling both current weather and 5-day forecasts.
 - **Offline Viewing**: In the event of network issues, data is stored locally in **localstorage**, allowing users to view their most recent search offline until the network problem is resolved.
 
-
+Built with React, Axios for API requests, and Tailwind CSS for styling, this app demonstrates the use of controlled components, custom hooks, environment variables, and asynchronous data fetching in a React environment.
 
 ## API Used
 
@@ -36,3 +36,10 @@ Navigate to the folder
  - [Searched City weather](https://openweathermap.org/current)
  - [Dynamic List of cities](https://www.geonames.org/export/geonames-search.html)
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`VITE_API_KEY` from openweathermap
+
+`VITE_USERNAME` from geonames
